@@ -1,7 +1,41 @@
-const nome = "Layse Glória Monteiro";
-const rg = "22436245-9";
-const cpf = "122.941.827-07";
-const celular = "(22) 99901-1856";
+const inputNome = document.querySelector("#cliente-nome");
+const inputRg = document.querySelector("#cliente-rg");
+const inputCpf = document.querySelector("#cliente-cpf");
+const inputCelular = document.querySelector("#cliente-celular");
+const inputsEndereco = {
+    rua: document.querySelector("#endereco-rua"),
+    numero: document.querySelector("#endereco-numero"),
+    cep: document.querySelector("#endereco-cep"),
+}
 
-const endereco = new Endereco("Rua João Manoel de Abreu", "463", "28022-280");
-const cliente = new Cliente(nome, rg, cpf, celular, endereco);
+const criarNovoCliente = () => {
+   
+    const criarNovoEndereco = () => {
+        rua = inputsEndereco.rua.value;
+        numero = inputsEndereco.numero.value;
+        cep = inputsEndereco.cep.value;
+
+        return new Endereco(rua, numero, cep);
+    }
+    
+    const nome = inputNome.value;
+    const rg = inputRg.value;
+    const cpf = inputCpf.value;
+    const celular = inputCelular.value;
+    const endereco = criarNovoEndereco();
+
+    return new Cliente(nome, rg, cpf, celular, endereco);
+}
+
+const gerarContrato = () => {
+    const cliente = criarNovoCliente();
+    localStorage.cliente = JSON.stringify(cliente);
+
+    abrirPaginaDownloadPdf();
+}
+
+const abrirPaginaDownloadPdf = () => {
+    const url = "pdf.html";
+    const aba = window.open(url, '_self');
+    aba.focus();
+}
