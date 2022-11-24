@@ -1,11 +1,11 @@
 class Contrato
 {
-    constructor(cliente, quantidadeDeMoveis, dataFesta, tempoDuracaoFesta, pagamento)
+    constructor(cliente, quantidadeDeMoveis, dataEvento, tempoDuracaoFesta, pagamento)
     {
         
         this.cliente = cliente;
         this.quantidadeDeMoveis = quantidadeDeMoveis;
-        this.dataFesta = dataFesta;
+        this.dataEvento = dataEvento;
         this.tempoDuracaoFesta = tempoDuracaoFesta;
         
         this.valorTotal = pagamento.valorTotal;

@@ -1,15 +1,14 @@
-const inputNome = document.querySelector("#cliente-nome");
-const inputRg = document.querySelector("#cliente-rg");
-const inputCpf = document.querySelector("#cliente-cpf");
-const inputCelular = document.querySelector("#cliente-celular");
-const inputsEndereco = {
-    rua: document.querySelector("#endereco-rua"),
-    numero: document.querySelector("#endereco-numero"),
-    cep: document.querySelector("#endereco-cep"),
-}
-
 const criarNovoCliente = () => {
-   
+    const inputNome = document.querySelector("#cliente-nome");
+    const inputRg = document.querySelector("#cliente-rg");
+    const inputCpf = document.querySelector("#cliente-cpf");
+    const inputCelular = document.querySelector("#cliente-celular");
+    const inputsEndereco = {
+        rua: document.querySelector("#endereco-rua"),
+        numero: document.querySelector("#endereco-numero"),
+        cep: document.querySelector("#endereco-cep"),
+    }
+
     const criarNovoEndereco = () => {
         rua = inputsEndereco.rua.value;
         numero = inputsEndereco.numero.value;
@@ -27,15 +26,66 @@ const criarNovoCliente = () => {
     return new Cliente(nome, rg, cpf, celular, endereco);
 }
 
-const gerarContrato = () => {
-    const cliente = criarNovoCliente();
-    localStorage.cliente = JSON.stringify(cliente);
+const buscarQuantidadeDeMoveis = () => {
+    const inputQuantMesas = document.querySelector("#moveis-mesas");
+    const inputQuantCadeiras = document.querySelector("#moveis-cadeiras");
+    const inputQuantTampos = document.querySelector("#moveis-tampos");
 
-    abrirPaginaDownloadPdf();
+    const quantidadeDeMoveis = {
+        mesas: inputQuantMesas.value,
+        cadeiras: inputQuantCadeiras.value,
+        tampos: inputQuantTampos.value,
+    }
+
+    return quantidadeDeMoveis;
+}
+
+const buscarDataDoEvento = () => {
+    const inputData = document.querySelector("#data-evento");
+
+    return new Date(inputData.value);
+}
+
+const buscarTempoDeDuracao = () => {
+    const inputTempoDuracao = document.querySelector("#tempo-duracao");
+
+    return inputTempoDuracao.value;
+}
+
+const definirPagamento = () => {
+    const inputValorTotal = document.querySelector("#pagamento-valor_total");
+    const inputValorTotalExtenso = document.querySelector("#pagamento-valor_total_extenso");
+    const inputValorEntrada = document.querySelector("#pagamento-valor_entrada");
+    const inputFormasDePagamento = document.querySelectorAll(".pagamento-formas:checked");
+
+    const valorTotal = Number(inputValorTotal.value);
+    const valorTotalExtenso = inputValorTotalExtenso.value;
+    const valorEntrada = Number(inputValorEntrada.value);
+    const formasDePagamento = [];
+
+    inputFormasDePagamento.forEach((input) => {
+        formasDePagamento.push(input.value);
+    })
+    
+    return new Pagamento(valorTotal, valorTotalExtenso, valorEntrada, formasDePagamento);
 }
 
 const abrirPaginaDownloadPdf = () => {
     const url = "pdf.html";
-    const aba = window.open(url, '_self');
+    const aba = window.open(url, '_blank');
     aba.focus();
 }
+
+const gerarContrato = () => {
+    const cliente = criarNovoCliente();
+    const quantidadeDeMoveis = buscarQuantidadeDeMoveis();
+    const dataEvento = buscarDataDoEvento();
+    const tempoDuracao = buscarTempoDeDuracao();
+    const pagamento = definirPagamento();
+
+    const contrato = new Contrato(cliente, quantidadeDeMoveis, dataEvento, tempoDuracao, pagamento);
+    localStorage.cliente = JSON.stringify(contrato);
+
+    // abrirPaginaDownloadPdf();
+}
+
