@@ -1,5 +1,7 @@
-const preencherInformacoesCliente = () => { 
-    const cliente = JSON.parse(localStorage.cliente);
+const contrato = JSON.parse(localStorage.contrato)
+
+const preencherInformacoesCliente = () => {
+    const cliente = contrato.cliente;
     
     const outputNome = document.querySelector("#cliente-nome");
     const outputRg = document.querySelector("#cliente-rg");
