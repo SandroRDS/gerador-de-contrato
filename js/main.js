@@ -43,7 +43,7 @@ const buscarQuantidadeDeMoveis = () => {
 const buscarDataDoEvento = () => {
     const inputData = document.querySelector("#data-evento");
 
-    return new Date(inputData.value);
+    return inputData.value;
 }
 
 const buscarTempoDeDuracao = () => {
