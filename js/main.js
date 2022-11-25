@@ -86,6 +86,6 @@ const gerarContrato = () => {
     const contrato = new Contrato(cliente, quantidadeDeMoveis, dataEvento, tempoDuracao, pagamento);
     localStorage.contrato = JSON.stringify(contrato);
 
-    // abrirPaginaDownloadPdf();
+    abrirPaginaDownloadPdf();
 }
 
