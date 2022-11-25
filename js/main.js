@@ -55,17 +55,17 @@ const buscarTempoDeDuracao = () => {
 const definirPagamento = () => {
     const inputValorTotal = document.querySelector("#pagamento-valor_total");
     const inputValorTotalExtenso = document.querySelector("#pagamento-valor_total_extenso");
-    const inputFormasDePagamento = document.querySelectorAll(".pagamento-formas:checked");
+    // const inputFormasDePagamento = document.querySelectorAll(".pagamento-formas:checked");
 
     const valorTotal = Number(inputValorTotal.value);
     const valorTotalExtenso = inputValorTotalExtenso.value;
-    const formasDePagamento = [];
+    // const formasDePagamento = [];
 
-    inputFormasDePagamento.forEach((input) => {
-        formasDePagamento.push(input.value);
-    })
+    // inputFormasDePagamento.forEach((input) => {
+    //     formasDePagamento.push(input.value);
+    // })
     
-    return new Pagamento(valorTotal, valorTotalExtenso, formasDePagamento);
+    return new Pagamento(valorTotal, valorTotalExtenso);
 }
 
 const abrirPaginaDownloadPdf = () => {

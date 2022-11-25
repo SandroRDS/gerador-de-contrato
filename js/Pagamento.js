@@ -1,10 +1,12 @@
 class Pagamento
 {
-    constructor(valorTotal, valorTotalPorExtenso, formasDePagamento)
+    constructor(valorTotal, valorTotalPorExtenso)
     {
         this.valorTotal = valorTotal;
         this.valorTotalPorExtenso = valorTotalPorExtenso;
         this.valorEntrada = valorTotal * 0.3;
+        
+        /*
         this.formasDePagamento = formasDePagamento.reduce((textoConcatenado, formaAtual, indice, arrayFormasDePagamento) => {
             textoConcatenado += formaAtual;
 
@@ -20,6 +22,6 @@ class Pagamento
             return textoConcatenado;
 
         }, "");
-
+        */
     }
 }
