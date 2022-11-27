@@ -60,6 +60,48 @@
     animation-name: close;
     animation-direction: alternate-reverse;
   }
+    
+  #nav__mobile::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+
+  #nav__mobile::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+
+  #nav__mobile::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: 0px none transparent;
+    border-radius: 50px;
+  }
+
+  #nav__mobile::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
+
+  #nav__mobile::-webkit-scrollbar-thumb:active {
+    background: transparent;
+  }
+
+  #nav__mobile::-webkit-scrollbar-track {
+    background: transparent;
+    border: 0px none transparent;
+    border-radius: 50px;
+  }
+
+  #nav__mobile:-webkit-scrollbar-track:hover {
+    background: transparent;
+  }
+
+  #nav__mobile::-webkit-scrollbar-track:active {
+    background: transparent;
+  }
+
+  #nav__mobile::-webkit-scrollbar-corner {
+    background: transparent;
+  }
   
   #nav__mobile.ativo{
     width: 145px;
