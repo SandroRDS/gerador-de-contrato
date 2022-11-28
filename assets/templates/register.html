@@ -18,7 +18,7 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   
   <!-- Link CSS -->
-  <link rel="stylesheet" href="/assets/styles/register.css">
+  <link rel="stylesheet" href="../styles/register.css">
 </head>
 <body>
   <div id="container">
@@ -34,31 +34,31 @@
         <span id="separationb--step2"></span>
         <div class="step">3</div>
       </div>
-      <form class="swiper-wrapper">
+      <form class="swiper-wrapper" action="../../php/validation/register-validation.php" method="POST">
         <div id="login--step1" class="swiper-slide">
 
           <div class="form--input--control">
-            <input type="text" required="" id="usuario-nome" class="form--input">
+            <input type="text" required="" name="usuario-nome" id="usuario-nome" class="form--input">
             <span class="material-symbols-sharp form--icon">person</span>
             <label class="form--label">Nome</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" id="usuario-sobrenome" class="form--input">
+            <input type="text" required="" name="usuario-sobrenome" id="usuario-sobrenome" class="form--input">
             <span class="material-symbols-sharp form--icon">person</span>
             <label class="form--label">Sobrenome</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" id="usuario-email" class="form--input">
+            <input type="text" required="" name="usuario-email" id="usuario-email" class="form--input">
             <span class="material-symbols-sharp form--icon">mail</span>
             <label class="form--label">Email</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" id="usuario-senha" class="form--input">
+            <input type="text" required="" name="usuario-senha" id="usuario-senha" class="form--input">
             <span class="material-symbols-sharp form--icon">vpn_key</span>
             <label class="form--label">Senha</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" id="usuario-senha-repeat" class="form--input">
+            <input type="text" required="" name="usuario-senha-repeat" id="usuario-senha-repeat" class="form--input">
             <span class="material-symbols-sharp form--icon">vpn_key</span>
             <label class="form--label">Repita a Senha</label>
           </div>
@@ -68,32 +68,32 @@
         <div id="login--step2" class="swiper-slide">
         
           <div class="form--input--control">
-            <input type="text" required="" id="endereco-cep" class="form--input" onblur="searchCEP()">
+            <input type="text" required="" name="endereco-cep" id="endereco-cep" class="form--input" onblur="searchCEP()">
             <span class="material-symbols-sharp form--icon">location_on</span>
             <label class="form--label">CEP</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" id="endereco-rua" class="form--input">
+            <input type="text" required="" name="endereco-rua" id="endereco-rua" class="form--input">
             <span class="material-symbols-sharp form--icon">add_road</span>
             <label class="form--label">Rua</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" id="endereco-numero" class="form--input">
+            <input type="text" required="" name="endereco-numero" id="endereco-numero" class="form--input">
             <span class="material-symbols-sharp form--icon">tag</span>
             <label class="form--label">Número da Rua</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" id="endereco-UF" class="form--input">
+            <input type="text" required="" name="endereco-UF" id="endereco-UF" class="form--input">
             <span class="material-symbols-sharp form--icon">tag</span>
             <label class="form--label">UF</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" id="endereco-bairro" class="form--input">
+            <input type="text" required="" name="endereco-bairro" id="endereco-bairro" class="form--input">
             <span class="material-symbols-sharp form--icon">villa</span>
             <label class="form--label">Bairro</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" id="endereco-referencia" class="form--input">
+            <input type="text" required="" name="endereco-referencia" id="endereco-referencia" class="form--input">
             <span class="material-symbols-sharp form--icon">multiple_stop</span>
             <label class="form--label">Referência (Opcional)</label>
           </div>
@@ -106,17 +106,17 @@
         <div id="login--step3" class="swiper-slide">
         
           <div class="form--input--control">
-            <input type="text" required="" id="usuario-celular" class="form--input">
+            <input type="text" required="" name="usuario-celular" id="usuario-celular" class="form--input">
             <span class="material-symbols-sharp form--icon">call</span>
             <label class="form--label">Celular</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" id="usuario-cpf" class="form--input">
+            <input type="text" required="" name="usuario-cpf" id="usuario-cpf" class="form--input">
             <span class="material-symbols-sharp form--icon">contact_page</span>
             <label class="form--label">CPF</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" id="usuario-cnpj" class="form--input">
+            <input type="text" required="" name="usuario-cnpj" id="usuario-cnpj" class="form--input">
             <span class="material-symbols-sharp form--icon">contact_page</span>
             <label class="form--label">CNPJ</label>
           </div>
@@ -132,12 +132,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-  <script src="/js/classFormMask/classFormMask.js"></script>
-  <script src="/js/validation/register--defineMasks.js"></script>
+  <script src="../../js/classFormMask/classFormMask.js"></script>
+  <script src="../../js/validation/register--defineMasks.js"></script>
 
-  <script src="/js/interactivity/register--swiper.js"></script>
-  <script src="/js/interactivity/register--changeColorSteps.js"></script>
-  <script src="/js/interactivity/register--cepSearch.js"></script>
+  <script src="../../js/interactivity/register--swiper.js"></script>
+  <script src="../../js/interactivity/register--changeColorSteps.js"></script>
+  <script src="../../js/interactivity/register--cepSearch.js"></script>
 </body>
 
 </html>
