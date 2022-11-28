@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  font-family: 'Roboto', sans-serif;
+
+  box-sizing: border-box;
+}
+
+#container{
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#steps{
+  margin-top: 15px;
+  padding: 0 15px;
+
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.step{
+  width: 30px;
+  height: 30px;
+
+  border: 2px solid #1d1d1d;
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#separation--step1,
+#separation--step2{
+  width: 0px;
+  height: 2px;
+
+  position: absolute;
+
+  margin-top: 14px;
+  background: blueviolet;
+  z-index: 9;
+
+  animation-duration: 0.3s;
+  animation-name: close;
+  animation-direction: alternate;
+}
+
+#separation--step1 {
+  width: 0px;
+  left: calc(33% - 20px);
+  animation-duration: 0.3s;
+  animation-name: close;
+  animation-direction: alternate-reverse;
+}
+
+#separation--step2 {
+  width: 0px;
+  left: calc(66% - 7.5px);
+  animation-duration: 0.3s;
+  animation-name: close;
+  animation-direction: alternate-reverse;
+}
+
+#separation--step1.ativo {
+  width: 30px;
+  left: calc(33% - 20px);
+  animation-duration: 0.3s;
+  animation-name: open;
+  animation-direction: alternate;
+}
+
+#separation--step2.ativo {
+  width: 30px;
+  left: calc(66% - 7.5px);
+  animation-duration: 0.3s;
+  animation-name: open;
+  animation-direction: alternate;
+}
+
+
+#separationb--step1,
+#separationb--step2{
+  width: 30px;
+  height: 2px;
+
+  margin-top: 14px;
+  background: #1d1d1d;
+  position: absolute;
+}
+
+#separationb--step1{
+  left: calc(33% - 20px);
+}
+
+#separationb--step2 {
+  left: calc(66% - 7.5px);
+}
+
+
+@keyframes open {
+  0% {
+    width: 0px;
+  }
+
+  10% {
+    width: 3px;
+  }
+
+  20% {
+    width: 6px;
+  }
+
+  30% {
+    width: 8px;
+  }
+
+  40% {
+    width: 12px;
+  }
+
+  50% {
+    width: 15px;
+  }
+
+  60% {
+    width: 18px;
+  }
+
+  70% {
+    width: 12px;
+  }
+
+  80% {
+    width: 24px;
+  }
+
+  90% {
+    width: 27px;
+  }
+
+  100% {
+    width: 30px;
+  }
+}
+
+@keyframes close {
+  0% {
+    width: 0px;
+  }
+  
+    10% {
+      width: 3px;
+    }
+  
+    20% {
+      width: 6px;
+    }
+  
+    30% {
+      width: 8px;
+    }
+  
+    40% {
+      width: 12px;
+    }
+  
+    50% {
+      width: 15px;
+    }
+  
+    60% {
+      width: 18px;
+    }
+  
+    70% {
+      width: 12px;
+    }
+  
+    80% {
+      width: 24px;
+    }
+  
+    90% {
+      width: 27px;
+    }
+  
+    100% {
+      width: 30px;
+    }
+}
+
+#register--container{
+  min-width: 280px;
+  width: 300px;
+  max-width: 300px;
+
+  margin: 2%;
+  padding: 0 2%;
+  border: 1px solid blueviolet;
+  border-top: 10px solid blueviolet;
+  border-radius: 10px;
+}
+
+#form--steps{
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  overflow-x: visible;
+}
+
+#login--step1, #login--step2, #login--step3{
+  width: 100%;
+  padding: 15px;
+}
+
+.form--input--control {
+  width: 100%;
+  height: 40px;
+
+  position: relative;
+
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+.form--input {
+  width: 100%;
+  height: 30px;
+
+  margin-top: 16px;
+  padding-left: 24px;
+  border-bottom: 1px solid black;
+  outline: none;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.form--icon {
+  position: absolute;
+  left: 0;
+
+  margin-top: 16px;
+}
+
+.form--label {
+  font-size: 14px;
+  color: #5f5f5f;
+
+  position: absolute;
+  left: 24px;
+
+  margin-top: 16px;
+  z-index: 2;
+}
+
+.form--input:focus {
+  border-bottom: 1px solid blueviolet;
+}
+
+.form--input:focus~.form--label,
+.form--input:valid~.form--label {
+  font-size: 13px;
+  color: #5f5f5f;
+
+  position: absolute;
+  top: 0px;
+  left: 24px;
+
+  margin-top: 0px;
+  z-index: 2;
+}
+
+#step1next{
+  color: #fff;
+
+  margin-top: 20px;
+  margin-left: calc(100% - 81.4px);
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: blueviolet;
+  cursor: pointer;
+}
+
+.step--buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.step--buttons input[type=button], .step--buttons input[type=submit]{
+  color: #fff;
+
+  margin-top: 20px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: blueviolet;
+  cursor: pointer;
+
+  display: flex;
+}
