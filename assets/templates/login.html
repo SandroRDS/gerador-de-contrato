@@ -7,7 +7,7 @@
   <title>Codigin - Gerador de Contratos</title>
 
   <!-- Link CSS -->
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="../styles/login.css">
 
   <!-- Link Google Icons -->
   <link rel="stylesheet"
@@ -24,7 +24,7 @@
 
   <div id="container">
 
-    <div id="login__container">
+    <form id="login__container" autocomplete="off">
       <div class="form--input--control">
         <input type="text" required="" id="cliente-nome" class="form--input">
         <span class="material-symbols-sharp form--icon">
@@ -40,13 +40,12 @@
         <label class="form--label">Senha</label>
       </div>
       <div id="remember__container">
-        <input type="checkbox" name="remember" id="remember">
-        <span>Lembrar de Mim</span>
+        <label for="remember"><input type="checkbox" name="remember" id="remember">Lembrar de Mim</label>
       </div>
       <a href="#"><button>Entrar<span class="material-symbols-sharp">
         trending_flat
       </span></button></a>
-    </div>
+    </form>
   </div>
   
 </body>

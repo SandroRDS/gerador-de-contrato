@@ -34,7 +34,7 @@
         <span id="separationb--step2"></span>
         <div class="step">3</div>
       </div>
-      <form class="swiper-wrapper" action="../../php/validation/register-validation.php" method="POST">
+      <form class="swiper-wrapper" action="../../php/validation/register-validation.php" method="POST" autocomplete="off">
         <div id="login--step1" class="swiper-slide">
 
           <div class="form--input--control">
@@ -61,6 +61,11 @@
             <input type="password" required="" name="usuario-senha-repeat" id="usuario-senha-repeat" class="form--input">
             <span class="material-symbols-sharp form--icon">vpn_key</span>
             <label class="form--label">Repita a Senha</label>
+          </div>
+          <div id="password-validate">
+            <p>* Min. de 8 caracteres</p>
+            <p>* Letra Maiúscula</p>
+            <p>* Caráter Especial</p>
           </div>
           <input type="button" value="Próximo" id="step1next">
         </div>

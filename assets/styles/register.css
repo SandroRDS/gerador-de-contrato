@@ -241,7 +241,7 @@
   height: 30px;
 
   margin-top: 16px;
-  padding-left: 24px;
+  padding-left: 30px;
   border-bottom: 1px solid black;
   outline: none;
   z-index: 10;
@@ -260,7 +260,7 @@
   color: #5f5f5f;
 
   position: absolute;
-  left: 24px;
+  left: 30px;
 
   margin-top: 16px;
   z-index: 2;
@@ -281,6 +281,22 @@
 
   margin-top: 0px;
   z-index: 2;
+}
+
+#password-validate{
+  width: 100%;
+  height: auto;
+
+  margin-top: 5px;
+}
+
+#password-validate p{
+  color: #5f5f5f;
+  font-size: 10px;
+}
+
+#login--step1:nth-child(6){
+  margin-top: 10px;
 }
 
 #step1next{
