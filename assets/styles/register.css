@@ -241,7 +241,7 @@
   height: 30px;
 
   margin-top: 16px;
-  padding-left: 24px;
+  padding-left: 30px;
   border-bottom: 1px solid black;
   outline: none;
   z-index: 10;
@@ -260,7 +260,7 @@
   color: #5f5f5f;
 
   position: absolute;
-  left: 24px;
+  left: 30px;
 
   margin-top: 16px;
   z-index: 2;
