@@ -65,6 +65,8 @@
                 $dados_endereco = "$idUsuario, '$logradouro', $numero, '$bairro', '$estado', '$cep', '$referencia'";
                 $insert_endereco = "INSERT INTO endereco ($estrutura_endereco) VALUES ($dados_endereco)";
                 $mysqli->query($insert_endereco);
+
+                header("Location: ../../assets/templates/login.html");
             }
             else
             {
