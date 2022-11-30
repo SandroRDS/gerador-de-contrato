@@ -1,8 +1,10 @@
+DROP TABLE usuario;
+
 CREATE TABLE Usuario(
-    idUsuario INTEGER PRIMARY KEY NOT NULL,
+    idUsuario INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nome VARCHAR(20) NOT NULL,
-    sobrenome VARCHAR(30) NOT NULL,
-    email VARCHAR(30) NOT NULL,
+    sobrenome VARCHAR(40) NOT NULL,
+    email VARCHAR(100) NOT NULL,
     senha VARCHAR(255) NOT NULL,
     cpf VARCHAR(11) NOT NULL,
     cnpj VARCHAR(14) NOT NULL,
