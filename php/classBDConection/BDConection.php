@@ -8,10 +8,10 @@
 
         public function __construct()
         {
-            $this->hostname = "localhost";
-            $this->username = "root";
-            $this->password = "";
-            $this->database = "contratos";
+            $this->hostname = "sql206.epizy.com";
+            $this->username = "epiz_33089052";
+            $this->password = "HdIgzUQGu1qV";
+            $this->database = "epiz_33089052_codigin_contratos";
         }
 
         public function criarConexao()
