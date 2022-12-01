@@ -50,21 +50,20 @@
             $cep        = $validacao->usuario->endereco->cep;
             $referencia = $validacao->usuario->endereco->referencia;
             
-            $estrutura_usuario = "nome, sobrenome, email, senha, cpf, cnpj, contato";
-            $dados_usuario     = "'$nome', '$sobrenome', '$email', '$senha', '$cpf', '$cnpj', '$contato'";
-            
             $verificacao_bd_usuario = $mysqli->query("SELECT 0 FROM usuario WHERE cpf = '$cpf' || cnpj = '$cnpj' || email = '$email' || contato = '$contato'");
-
+            
             if($verificacao_bd_usuario->num_rows < 1)
             {
-                $insert_usuario = "INSERT INTO usuario ($estrutura_usuario) VALUES ($dados_usuario)";           
-                $mysqli->query($insert_usuario);
-                $idUsuario = $mysqli->insert_id;
-    
-                $estrutura_endereco = "idUsuario, logradouro, numero, bairro, estado, cep, referencia";
-                $dados_endereco = "$idUsuario, '$logradouro', $numero, '$bairro', '$estado', '$cep', '$referencia'";
-                $insert_endereco = "INSERT INTO endereco ($estrutura_endereco) VALUES ($dados_endereco)";
+                $estrutura_endereco = "logradouro, numero, bairro, estado, cep, referencia";
+                $dados_endereco     = "'$logradouro', $numero, '$bairro', '$estado', '$cep', '$referencia'";
+                $insert_endereco    = "INSERT INTO Endereco ($estrutura_endereco) VALUES ($dados_endereco)";
                 $mysqli->query($insert_endereco);
+                $idEndereco = $mysqli->insert_id;
+                
+                $estrutura_usuario = "idEndereco, nome, sobrenome, email, senha, cpf, cnpj, contato";
+                $dados_usuario     = "'$idEndereco', '$nome', '$sobrenome', '$email', '$senha', '$cpf', '$cnpj', '$contato'";
+                $insert_usuario    = "INSERT INTO Usuario ($estrutura_usuario) VALUES ($dados_usuario)";           
+                $mysqli->query($insert_usuario);
 
                 header("Location: ../../assets/templates/login.html");
             }

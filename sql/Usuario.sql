@@ -2,6 +2,7 @@ DROP TABLE usuario;
 
 CREATE TABLE Usuario(
     idUsuario INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    idEndereco INTEGER NOT NULL,
     nome VARCHAR(20) NOT NULL,
     sobrenome VARCHAR(40) NOT NULL,
     email VARCHAR(100) NOT NULL,
@@ -10,5 +11,6 @@ CREATE TABLE Usuario(
     cnpj VARCHAR(14) NOT NULL,
     contato VARCHAR(11) NOT NULL,
     nivel INT(1) UNSIGNED NOT NULL DEFAULT '1',
-    ativo BOOLEAN NOT NULL DEFAULT '0'
+    ativo BOOLEAN NOT NULL DEFAULT '0',
+    FOREIGN KEY (idEndereco) REFERENCES Endereco(idEndereco)
 );
