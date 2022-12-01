@@ -24,27 +24,22 @@
 
   <div id="container">
 
-    <form id="login__container" autocomplete="off">
+    <form method="POST" action="../../php/validation/login-validation.php" id="login__container" autocomplete="off">
       <div class="form--input--control">
-        <input type="text" required="" id="cliente-nome" class="form--input">
-        <span class="material-symbols-sharp form--icon">
-          person
-        </span>
-        <label class="form--label">Nome</label>
+        <input type="text" name="usuario-identificador" required="" id="cliente-nome" class="form--input">
+        <span class="material-symbols-sharp form--icon">person</span>
+        <label class="form--label">Email ou CPF</label>
       </div>
       <div class="form--input--control">
-        <input type="password" required="" id="cliente-senha" class="form--input">
-        <span class="material-symbols-sharp form--icon">
-          key
-        </span>
+        <input type="password" name="usuario-senha" required="" id="cliente-senha" class="form--input">
+        <span class="material-symbols-sharp form--icon">key</span>
         <label class="form--label">Senha</label>
       </div>
       <div id="remember__container">
-        <label for="remember"><input type="checkbox" name="remember" id="remember">Lembrar de Mim</label>
+        <label for="remember"><input type="checkbox" name="remember" value="Y" id="remember">Lembrar de Mim</label>
       </div>
-      <a href="#"><button>Entrar<span class="material-symbols-sharp">
-        trending_flat
-      </span></button></a>
+
+      <button type="submit" name="entrar" value="">Entrar<span class="material-symbols-sharp">trending_flat</span></button>
     </form>
   </div>
   
