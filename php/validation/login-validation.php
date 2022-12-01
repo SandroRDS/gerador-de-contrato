@@ -10,7 +10,7 @@
         $conexao = new BDConection();
         $mysqli = $conexao->criarConexao();
 
-        $pesquisa_usuario_existente = "SELECT senha FROM usuario WHERE cpf = '$identificador_submit' || email = '$identificador_submit'";
+        $pesquisa_usuario_existente = "SELECT senha, ativo, nivel FROM Usuario WHERE cpf = '$identificador_submit' || email = '$identificador_submit'";
         $resultado_pesquisa = $mysqli->query($pesquisa_usuario_existente);
 
         if($resultado_pesquisa->num_rows > 0)
