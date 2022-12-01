@@ -37,7 +37,7 @@
             $nome           = $validacao->usuario->nome;
             $sobrenome      = $validacao->usuario->sobrenome;
             $email          = $validacao->usuario->email;
-            $senha          = $validacao->usuario->senha;
+            $senha          = password_hash($validacao->usuario->senha, PASSWORD_DEFAULT);
             $cpf            = $validacao->usuario->cpf;
             $cnpj           = $validacao->usuario->cnpj;
             $contato        = $validacao->usuario->celular;
