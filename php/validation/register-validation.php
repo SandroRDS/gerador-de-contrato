@@ -50,8 +50,8 @@
             $cep        = $validacao->usuario->endereco->cep;
             $referencia = $validacao->usuario->endereco->referencia;
             
-            $estrutura_usuario = "nome, sobrenome, email, senha, cpf, cnpj, contato, conta_aprovada";
-            $dados_usuario     = "'$nome', '$sobrenome', '$email', '$senha', '$cpf', '$cnpj', '$contato', $conta_aprovada";
+            $estrutura_usuario = "nome, sobrenome, email, senha, cpf, cnpj, contato";
+            $dados_usuario     = "'$nome', '$sobrenome', '$email', '$senha', '$cpf', '$cnpj', '$contato'";
             
             $verificacao_bd_usuario = $mysqli->query("SELECT * FROM usuario WHERE cpf = '$cpf' || cnpj = '$cnpj' || email = '$email' || contato = '$contato'");
 

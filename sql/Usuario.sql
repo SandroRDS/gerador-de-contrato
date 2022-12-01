@@ -9,5 +9,6 @@ CREATE TABLE Usuario(
     cpf VARCHAR(11) NOT NULL,
     cnpj VARCHAR(14) NOT NULL,
     contato VARCHAR(11) NOT NULL,
-    conta_aprovada BOOLEAN NOT NULL
+    nivel INT(1) UNSIGNED NOT NULL DEFAULT '1',
+    conta_aprovada BOOLEAN NOT NULL DEFAULT '0'
 );
