@@ -53,7 +53,7 @@
             $estrutura_usuario = "nome, sobrenome, email, senha, cpf, cnpj, contato";
             $dados_usuario     = "'$nome', '$sobrenome', '$email', '$senha', '$cpf', '$cnpj', '$contato'";
             
-            $verificacao_bd_usuario = $mysqli->query("SELECT * FROM usuario WHERE cpf = '$cpf' || cnpj = '$cnpj' || email = '$email' || contato = '$contato'");
+            $verificacao_bd_usuario = $mysqli->query("SELECT 0 FROM usuario WHERE cpf = '$cpf' || cnpj = '$cnpj' || email = '$email' || contato = '$contato'");
 
             if($verificacao_bd_usuario->num_rows < 1)
             {
