@@ -1,6 +1,39 @@
 <?php
     include "../classBDConection/BDConection.php";
     
+    function verificarExistenciaUsuario($mysqli, $identificador)
+    {
+        $pesquisa  = "SELECT senha, ativo, nivel FROM Usuario WHERE cpf = '$identificador' || email = '$identificador'";
+        return $mysqli->query($pesquisa);
+    }
+
+    function validarUsuario($senha_BD, $senha_submit, $ativo)
+    {
+        if(password_verify($senha_submit, $senha_BD))
+        {
+            if($ativo)
+            {
+                return true;
+            }
+            else
+            {
+                echo "A conta está desativada!";
+                return false;
+            }
+        }
+        else
+        {
+            echo "A senha informada está incorreta!";
+            return false;
+        }
+    }
+
+    function criarCookieLogin($identificador, $nivel, $duracao)
+    {
+        setcookie("identificador", "$identificador", $duracao, "/");
+        setcookie("nivel", "$nivel", $duracao, "/");
+    }
+
     if(isset($_POST["entrar"]))
     {
         $identificador_submit = $_POST["usuario-identificador"];
@@ -9,23 +42,29 @@
 
         $conexao = new BDConection();
         $mysqli = $conexao->criarConexao();
+        
+        $pesquisa_usuario = verificarExistenciaUsuario($mysqli, $identificador_submit);
 
-        $pesquisa_usuario_existente = "SELECT senha, ativo, nivel FROM Usuario WHERE cpf = '$identificador_submit' || email = '$identificador_submit'";
-        $resultado_pesquisa = $mysqli->query($pesquisa_usuario_existente);
-
-        if($resultado_pesquisa->num_rows > 0)
+        if($pesquisa_usuario->num_rows > 0)
         {
-            $dados_usuario = $resultado_pesquisa->fetch_array(MYSQLI_ASSOC);
-            $senha_usuario = $dados_usuario["senha"];
+            $dados_usuario = $pesquisa_usuario->fetch_array(MYSQLI_ASSOC);
+            $usuario_senha = $dados_usuario["senha"];
+            $usuario_ativo = $dados_usuario["ativo"];
+            $usuario_nivel = $dados_usuario["nivel"];
 
-            if(password_verify($senha_submit, $senha_usuario))
+            if(validarUsuario($usuario_senha, $senha_submit, $usuario_ativo))
             {
-                echo "Usuário encontrado!";
-                var_dump($dados_usuario);
-            }
-            else
-            {
-                echo "Senha incorreta!";
+                $tempo_sessao = $remember ? time() + 60*60*24*365 : 0;
+                criarCookieLogin($identificador_submit, $usuario_nivel, $tempo_sessao);
+
+                if($usuario_nivel == 2)
+                {
+                    header("Location: ../administration/user-admin.php");
+                }
+                else
+                {
+                    header("Location: ../../assets/templates/client-dashboard.html");
+                }
             }
         }
         else
