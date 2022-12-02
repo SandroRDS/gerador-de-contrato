@@ -16,9 +16,6 @@
     }
 
     $query .= " WHERE idUsuario = '$id'";
-
-    var_dump($query);
-
     $mysqli->query($query);
 
     $url = $_SERVER["HTTP_REFERER"];
