@@ -4,16 +4,15 @@
     include "../classUserValidation/UserValidation.php";
     include "../classBDConection/BDConection.php";
 
-    if(isset($_POST["enviar"]))
+    function buscarDadosDoFormulario()
     {
         $novo_endereco = new Endereco();
         $novo_usuario = new Usuario();
-    
+
         $novo_usuario->nome      = $_POST["usuario-nome"];
         $novo_usuario->sobrenome = $_POST["usuario-sobrenome"];
         $novo_usuario->email     = $_POST["usuario-email"];
         $novo_usuario->senha     = $_POST["usuario-senha"];
-        $senha_repeat            = $_POST["usuario-senha-repeat"];
         $novo_usuario->celular   = $_POST["usuario-celular"];
         $novo_usuario->cpf       = $_POST["usuario-cpf"];
         $novo_usuario->cnpj      = $_POST["usuario-cnpj"];
@@ -27,6 +26,37 @@
     
         $novo_usuario->endereco = $novo_endereco;
 
+        return $novo_usuario;
+    }
+
+    function inserirEndereco($mysqli, $logradouro, $numero, $bairro, $estado, $cep, $referencia)
+    {
+        $estrutura_endereco = "logradouro, numero, bairro, estado, cep, referencia";
+        $dados_endereco     = "'$logradouro', $numero, '$bairro', '$estado', '$cep', '$referencia'";
+        $insert_endereco    = "INSERT INTO Endereco ($estrutura_endereco) VALUES ($dados_endereco)";
+        $mysqli->query($insert_endereco);
+    }
+
+    function inserirUsuario($mysqli, $idEndereco, $nome, $sobrenome, $email, $senha, $cpf, $cnpj, $contato)
+    {
+        $estrutura_usuario = "idEndereco, nome, sobrenome, email, senha, cpf, cnpj, contato";
+        $dados_usuario     = "'$idEndereco', '$nome', '$sobrenome', '$email', '$senha', '$cpf', '$cnpj', '$contato'";
+        $insert_usuario    = "INSERT INTO Usuario ($estrutura_usuario) VALUES ($dados_usuario)";           
+        $mysqli->query($insert_usuario);
+    }
+
+    function verificarUsuarioExistente($mysqli, $cpf, $cnpj, $email, $contato)
+    {
+        $pesquisa_verificacao  = "SELECT 0 FROM Usuario WHERE cpf = '$cpf' || cnpj = '$cnpj' || email = '$email' || contato = '$contato'";
+        $resultado_verificacao = $mysqli->query($pesquisa_verificacao);
+        return $resultado_verificacao->num_rows < 1;
+    }
+
+    if(isset($_POST["enviar"]))
+    {
+        $novo_usuario = buscarDadosDoFormulario();
+        $senha_repeat = $_POST["usuario-senha-repeat"];
+
         $validacao = new UserValidation($novo_usuario, $senha_repeat);
         
         if(empty($validacao->erros))
@@ -34,36 +64,27 @@
             $conexaoBD = new BDConection();
             $mysqli    = $conexaoBD->criarConexao();
 
-            $nome           = $validacao->usuario->nome;
-            $sobrenome      = $validacao->usuario->sobrenome;
-            $email          = $validacao->usuario->email;
-            $senha          = password_hash($validacao->usuario->senha, PASSWORD_DEFAULT);
-            $cpf            = $validacao->usuario->cpf;
-            $cnpj           = $validacao->usuario->cnpj;
-            $contato        = $validacao->usuario->celular;
-            $conta_aprovada = 0;
+            $nome      = $validacao->usuario->nome;
+            $sobrenome = $validacao->usuario->sobrenome;
+            $email     = $validacao->usuario->email;
+            $senha     = password_hash($validacao->usuario->senha, PASSWORD_DEFAULT);
+            $cpf       = $validacao->usuario->cpf;
+            $cnpj      = $validacao->usuario->cnpj;
+            $contato   = $validacao->usuario->celular;
 
             $logradouro = $validacao->usuario->endereco->rua;
             $numero     = $validacao->usuario->endereco->numero;
             $bairro     = $validacao->usuario->endereco->bairro;
             $estado     = $validacao->usuario->endereco->uf;
             $cep        = $validacao->usuario->endereco->cep;
-            $referencia = $validacao->usuario->endereco->referencia;
-            
-            $verificacao_bd_usuario = $mysqli->query("SELECT 0 FROM usuario WHERE cpf = '$cpf' || cnpj = '$cnpj' || email = '$email' || contato = '$contato'");
-            
-            if($verificacao_bd_usuario->num_rows < 1)
+            $referencia = $validacao->usuario->endereco->referencia;            
+
+            if(verificarUsuarioExistente($mysqli, $cpf, $cnpj, $email, $contato))
             {
-                $estrutura_endereco = "logradouro, numero, bairro, estado, cep, referencia";
-                $dados_endereco     = "'$logradouro', $numero, '$bairro', '$estado', '$cep', '$referencia'";
-                $insert_endereco    = "INSERT INTO Endereco ($estrutura_endereco) VALUES ($dados_endereco)";
-                $mysqli->query($insert_endereco);
+                inserirEndereco($mysqli, $logradouro, $numero, $bairro, $estado, $cep, $referencia);
                 $idEndereco = $mysqli->insert_id;
                 
-                $estrutura_usuario = "idEndereco, nome, sobrenome, email, senha, cpf, cnpj, contato";
-                $dados_usuario     = "'$idEndereco', '$nome', '$sobrenome', '$email', '$senha', '$cpf', '$cnpj', '$contato'";
-                $insert_usuario    = "INSERT INTO Usuario ($estrutura_usuario) VALUES ($dados_usuario)";           
-                $mysqli->query($insert_usuario);
+                inserirUsuario($mysqli, $idEndereco, $nome, $sobrenome, $email, $senha, $cpf, $cnpj, $contato);
 
                 header("Location: ../../assets/templates/login.html");
             }
