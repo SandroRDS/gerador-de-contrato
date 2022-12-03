@@ -34,40 +34,40 @@
         <span id="separationb--step2"></span>
         <div class="step">3</div>
       </div>
+      
       <form class="swiper-wrapper" action="../../php/validation/register-validation.php" method="POST" autocomplete="off">
         <div id="login--step1" class="swiper-slide">
 
+          <span id="name--alert" class="alert"><p>* Nomes e Sobrenome apenas com letras e mais de 3 digitos</p></span>
+          <span id="email--alert" class="alert"><p>* Formatação de E-mail incorreta</p></span>
+          <span id="password--alert" class="alert"><p>* A senha deve conter min. de 8 caracteres, letra maiúscola, letra minúscola e caracter especial</p></span>
+          <span id="passwordRepeat--alert" class="alert"><p>* As senhas devem ser indenticas</p></span>
           <div class="form--input--control">
-            <input type="text" required="" name="usuario-nome" id="usuario-nome" class="form--input">
+            <input type="text" required="" name="usuario-nome" id="usuario-nome" class="form--input" minlength="3" maxlength="20" onblur="validateName()"> 
             <span class="material-symbols-sharp form--icon">person</span>
             <label class="form--label">Nome</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" name="usuario-sobrenome" id="usuario-sobrenome" class="form--input">
+            <input type="text" required="" name="usuario-sobrenome" id="usuario-sobrenome" class="form--input" minlength="3" maxlength="40" onblur="validateSobreName()">
             <span class="material-symbols-sharp form--icon">person</span>
             <label class="form--label">Sobrenome</label>
           </div>
           <div class="form--input--control">
-            <input type="text" required="" name="usuario-email" id="usuario-email" class="form--input">
+            <input type="text" required="" name="usuario-email" id="usuario-email" class="form--input" onblur="validateEmail()">
             <span class="material-symbols-sharp form--icon">mail</span>
             <label class="form--label">Email</label>
           </div>
           <div class="form--input--control">
-            <input type="password" required="" name="usuario-senha" id="usuario-senha" class="form--input">
+            <input type="password" required="" name="usuario-senha" id="usuario-senha" class="form--input" onblur="validatePassword()">
             <span class="material-symbols-sharp form--icon">vpn_key</span>
             <label class="form--label">Senha</label>
           </div>
           <div class="form--input--control">
-            <input type="password" required="" name="usuario-senha-repeat" id="usuario-senha-repeat" class="form--input">
+            <input type="password" required="" name="usuario-senha-repeat" id="usuario-senha-repeat" class="form--input" onblur="validateRepeatPassword()">
             <span class="material-symbols-sharp form--icon">vpn_key</span>
             <label class="form--label">Repita a Senha</label>
           </div>
-          <div id="password-validate">
-            <p>* Min. de 8 caracteres</p>
-            <p>* Letra Maiúscula</p>
-            <p>* Caráter Especial</p>
-          </div>
-          <input type="button" value="Próximo" id="step1next">
+          <input type="button" value="Próximo" id="step1next" onclick="nextStep1()">
         </div>
 
         <div id="login--step2" class="swiper-slide">
@@ -103,7 +103,7 @@
             <label class="form--label">Referência (Opcional)</label>
           </div>
           <div class="step--buttons">
-            <input type="button" value="Voltar" id="step2back">
+            <input type="button" value="Voltar" id="step2back" onclick="backStep1()">
             <input type="button" value="Próximo" id="step2Next">
           </div>
         </div>
@@ -134,6 +134,8 @@
       </form>
     </div>
   </div>
+
+  <script src="../../js/inputsValidation.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
