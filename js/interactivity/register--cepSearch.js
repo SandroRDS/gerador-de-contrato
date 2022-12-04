@@ -10,12 +10,22 @@ const searchCEP = () => {
     });
   
     const fillAddress = (data) => {
-      const inputRua     = document.getElementById('endereco-rua');
-      const inputBairro  = document.getElementById('endereco-bairro')
-      const inputUF      = document.getElementById('endereco-UF');
-  
-      inputRua.value    = data.logradouro === undefined ? "" : data.logradouro;
-      inputBairro.value = data.bairro     === undefined ? "" : data.bairro;
-      inputUF.value     = data.uf         === undefined ? "" : data.uf;
+        const inputRua     = document.getElementById('endereco-rua');
+        const inputBairro  = document.getElementById('endereco-bairro')
+        const inputUF      = document.getElementById('endereco-UF');
+        
+        if(data.erro)
+        {
+            //Retorna erro
+            inputRua.value    = "";
+            inputBairro.value = "";
+            inputUF.value     = "";
+        }
+        else
+        {
+            inputRua.value    = data.logradouro;
+            inputBairro.value = data.bairro;
+            inputUF.value     = data.uf;
+        }
     }
 }
