@@ -38,7 +38,7 @@
             $regex_numeros  = '/^\d+$/'; //Aceita apenas dígitos de 0-9.
             $regex_email    = '/^.+@\w+(\.\w+)+$/'; //Aceita apenas letras (maiúsculas e minúsculas, sem acento), dígitos de 0-9 e "." antes do @ (presença obrigatória). Após o @, aceita as mesmas condições iniciais, porém, após a primeira palavra (domínio), é obrigatório pelo menos a presença de um "." e mais uma palavra (TLD).
             $regex_senha    = '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#-.])[0-9a-zA-Z$*&@#-.]+$/'; //Aceita todos os caracteres existentes, sendo obrigatório a presença de pelo menos uma letra maiúscula e minúscula, um dígito e um símbolo: $*&@#-.
-            $regex_endereco = '/^[\wá-üÁ-Ü]+((\s[\wá-üÁ-Ü]+)+)?$/'; //Aceita apenas letras (maiúsculas, minúsculas e acentuadas), dígitos de 0-9 e espaços não consecutivos.
+            $regex_endereco = '/^[\wá-üÁ-Ü.]+((\s[\wá-üÁ-Ü.]+)+)?$/'; //Aceita apenas letras (maiúsculas, minúsculas e acentuadas), dígitos de 0-9 e espaços não consecutivos.
             $regex_uf       = '/^[A-Z]+$/';
 
             $this->configValidation["nome"]["valor"] = $this->usuario->nome;
