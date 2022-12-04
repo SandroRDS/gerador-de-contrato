@@ -25,6 +25,9 @@ class RegisterInputValidation
             email      : document.getElementById('email--alert'),
             senha      : document.getElementById('password--alert'),
             senhaRepeat: document.getElementById('passwordRepeat--alert'),
+            celular    : document.getElementById('celular--alert'),
+            cpf        : document.getElementById('cpf--alert'),
+            cnpj       : document.getElementById('cnpj--alert'),
             cep        : document.getElementById('cep--alert'),
             rua        : document.getElementById('rua--alert'),
             numero     : document.getElementById('numero--alert'),
@@ -271,7 +274,7 @@ class RegisterInputValidation
 
     validarRua()
     {
-        if(this.validarInput(this.inputsUsuario.rua, this.alerts.rua, this.regex.endereco, 6))
+        if(this.validarInput(this.inputsUsuario.rua, this.alerts.rua, this.regex.endereco, 2))
         {
             this.errosStep2.rua = false;
         }
@@ -307,7 +310,7 @@ class RegisterInputValidation
 
     validarBairro()
     {
-        if(this.validarInput(this.inputsUsuario.bairro, this.alerts.bairro, this.regex.endereco, 5))
+        if(this.validarInput(this.inputsUsuario.bairro, this.alerts.bairro, this.regex.endereco, 2))
         {
             this.errosStep2.bairro = false;
         }
