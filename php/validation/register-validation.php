@@ -90,7 +90,7 @@
             }
             else
             {
-                header("Location: ../../assets/templates/register.html");
+                header("Location: ../../assets/templates/register.php?error=Conta existente!");
             }
         }
         else

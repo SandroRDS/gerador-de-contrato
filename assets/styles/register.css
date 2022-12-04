@@ -13,6 +13,7 @@
   height: 100vh;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -334,4 +335,9 @@ span.alert{
   cursor: pointer;
 
   display: flex;
+}
+
+.register-error
+{
+
 }

@@ -144,9 +144,14 @@
         </div>
         
       </form>
-    </div>
-  </div>
 
+    </div>
+
+    <?php
+      $erro = $_GET["error"];
+      echo "<div class='register-error'>$erro</div>";
+    ?>
+  </div>
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   
@@ -154,7 +159,6 @@
   
   <script src="../../js/classFormMask/classFormMask.js"></script>
   <script src="../../js/validation/register--defineMasks.js"></script>
-
 
   <script src="../../js/interactivity/register--swiper.js"></script>
   <script src="../../js/interactivity/register--changeColorSteps.js"></script>
