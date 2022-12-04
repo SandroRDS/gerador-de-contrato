@@ -414,6 +414,20 @@ class RegisterInputValidation
         this.estilizarEtapa2Retrocedida();
         swiper.slidePrev();
     }
+
+    avancarEtapa3()
+    {
+        this.validarCelular();
+        this.validarCpf();
+        this.validarCnpj();
+
+        const arrayErros = Object.values(this.errosStep3);
+
+        if(arrayErros.includes(true))
+        {
+            return false;
+        }
+    }
 }
 
 const inputValidation = new RegisterInputValidation();
