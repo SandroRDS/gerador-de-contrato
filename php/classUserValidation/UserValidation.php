@@ -38,7 +38,7 @@
             $regex_numeros  = '/^\d+$/'; //Aceita apenas dígitos de 0-9.
             $regex_email    = '/^.+@\w+(\.\w+)+$/'; //Aceita apenas letras (maiúsculas e minúsculas, sem acento), dígitos de 0-9 e "." antes do @ (presença obrigatória). Após o @, aceita as mesmas condições iniciais, porém, após a primeira palavra (domínio), é obrigatório pelo menos a presença de um "." e mais uma palavra (TLD).
             $regex_senha    = '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#-.])[0-9a-zA-Z$*&@#-.]+$/'; //Aceita todos os caracteres existentes, sendo obrigatório a presença de pelo menos uma letra maiúscula e minúscula, um dígito e um símbolo: $*&@#-.
-            $regex_endereco = '/^[\wá-üÁ-Ü]+((\s[\wá-üÁ-Ü]+)+)?$/'; //Aceita apenas letras (maiúsculas, minúsculas e acentuadas), dígitos de 0-9 e espaços não consecutivos.
+            $regex_endereco = '/^[\wá-üÁ-Ü.]+((\s[\wá-üÁ-Ü.]+)+)?$/'; //Aceita apenas letras (maiúsculas, minúsculas e acentuadas), dígitos de 0-9 e espaços não consecutivos.
             $regex_uf       = '/^[A-Z]+$/';
 
             $this->configValidation["nome"]["valor"] = $this->usuario->nome;
@@ -56,7 +56,7 @@
             $this->configValidation["email"]["valor"] = $this->usuario->email;
             $this->configValidation["email"]["regex"] = $regex_email;
             $this->configValidation["email"]["isOptional"] = false;
-            $this->configValidation["email"]["min"] = 9;
+            $this->configValidation["email"]["min"] = 5;
             $this->configValidation["email"]["max"] = 100;
 
             $this->configValidation["senha"]["valor"] = $this->usuario->senha;
@@ -86,7 +86,7 @@
             $this->configValidation["rua"]["valor"] = $this->usuario->endereco->rua;
             $this->configValidation["rua"]["regex"] = $regex_endereco;
             $this->configValidation["rua"]["isOptional"] = false;
-            $this->configValidation["rua"]["min"] = 6;
+            $this->configValidation["rua"]["min"] = 2;
             $this->configValidation["rua"]["max"] = 100;
 
             $this->configValidation["numero"]["valor"] = $this->usuario->endereco->numero;
@@ -104,7 +104,7 @@
             $this->configValidation["bairro"]["valor"] = $this->usuario->endereco->bairro;
             $this->configValidation["bairro"]["regex"] = $regex_endereco;
             $this->configValidation["bairro"]["isOptional"] = false;
-            $this->configValidation["bairro"]["min"] = 5;
+            $this->configValidation["bairro"]["min"] = 2;
             $this->configValidation["bairro"]["max"] = 100;
 
             $this->configValidation["uf"]["valor"] = $this->usuario->endereco->uf;
@@ -116,7 +116,7 @@
             $this->configValidation["referencia"]["valor"] = $this->usuario->endereco->referencia;
             $this->configValidation["referencia"]["regex"] = $regex_endereco;
             $this->configValidation["referencia"]["isOptional"] = true;
-            $this->configValidation["referencia"]["min"] = 3;
+            $this->configValidation["referencia"]["min"] = 2;
             $this->configValidation["referencia"]["max"] = 30;
         }
 
