@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codigin - Página de Administração</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="../styles/admin-dashboard.css">
+</head>
+
+<body>
+  
+  <div id="container">
+
+    <div id="tabela--de--usuarios">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>Contato</th>
+            <th>Conta Ativada</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="idUsuario">6</td>
+            <td class="nome">Martin</td>
+            <td class="sobrenome">Carlos Eduardo Cauê Pinto</td>
+            <td class="cpf">07825108922</td>
+            <td class="email">martin.carlos.pinto@systrix.com.br</td>
+            <td class="contato">27999711388</td>
+            <td class="ativo">0</td>
+            <td><a href="../query/UPDATE_user.php?id=6&amp;campos=ativo&amp;valores=1">Ativar Conta</a></td>
+            <td><a href="../query/DELETE_user.php?id=6">Excluir Usuário</a></td>
+          </tr>
+          <tr>
+            <td class="idUsuario">3</td>
+            <td class="nome">Daniela</td>
+            <td class="sobrenome">Nicole Mariah Alves</td>
+            <td class="cpf">55703299608</td>
+            <td class="email">danielanicolealves@inforgel.com</td>
+            <td class="contato">63987452639</td>
+            <td class="ativo">0</td>
+            <td><a href="../query/UPDATE_user.php?id=3&amp;campos=ativo&amp;valores=1">Ativar Conta</a></td>
+            <td><a href="../query/DELETE_user.php?id=3">Excluir Usuário</a></td>
+          </tr>
+          <tr>
+            <td class="idUsuario">4</td>
+            <td class="nome"></td>
+            <td class="sobrenome"></td>
+            <td class="cpf"></td>
+            <td class="email">admin</td>
+            <td class="contato"></td>
+            <td class="ativo">1</td>
+            <td><a href="../query/UPDATE_user.php?id=4&amp;campos=ativo&amp;valores=0">Desativar Conta</a></td>
+            <td><a href="../query/DELETE_user.php?id=4">Excluir Usuário</a></td>
+          </tr>
+          <tr>
+            <td class="idUsuario">5</td>
+            <td class="nome">Mariah</td>
+            <td class="sobrenome">Rayssa Nair Jesus</td>
+            <td class="cpf">46941751657</td>
+            <td class="email">mariah-jesus94@picolotoengenharia.com.br</td>
+            <td class="contato">19995188917</td>
+            <td class="ativo">1</td>
+            <td><a href="../query/UPDATE_user.php?id=5&amp;campos=ativo&amp;valores=0">Desativar Conta</a></td>
+            <td><a href="../query/DELETE_user.php?id=5">Excluir Usuário</a></td>
+          </tr>
+          <tr>
+            <td class="idUsuario">7</td>
+            <td class="nome">Martin</td>
+            <td class="sobrenome">Carlos Eduardo Cauê Pinto</td>
+            <td class="cpf">07825108922</td>
+            <td class="email">martin.carlos.pinto@systrix.com.br</td>
+            <td class="contato">27999711388</td>
+            <td class="ativo">0</td>
+            <td><a href="../query/UPDATE_user.php?id=7&amp;campos=ativo&amp;valores=1">Ativar Conta</a></td>
+            <td><a href="../query/DELETE_user.php?id=7">Excluir Usuário</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

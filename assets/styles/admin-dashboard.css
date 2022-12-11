@@ -1,0 +1,61 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  font-family: 'Roboto', sans-serif;
+
+  box-sizing: border-box;
+}
+
+#container{
+  width: 100%;
+  height: 100vh;
+  background-image: url(../images/admin-backgroud.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tabela--de--usuarios{
+  max-width: 1200px;
+  width: 900px;
+  height: 80%;
+
+  padding: 10px;
+  border: 1px solid #ffffff40;
+  border-radius: 16px;
+  background: #ffffff80;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow-x: auto;
+}
+table{
+  border-spacing: 1px;
+  padding: 5px;
+  table-layout: fixed;
+}
+
+#tabela--de--usuarios table thead tr{
+  color: #fff;
+  background-color: #1d1d1d;
+}
+
+#tabela--de--usuarios table thead tr th{
+  padding: 0 10px;
+}
+
+td{
+  padding: 10px;
+}
+
+td:nth-child(7){
+  text-align: center;
+}
+
+
+
+

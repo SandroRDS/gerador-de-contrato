@@ -1,0 +1,91 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  font-family: 'Kdam Thmor Pro', sans-serif;
+
+  box-sizing: border-box;
+}
+
+#container{
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#img--conteudo{
+  width: 500px;
+  height: 500px;
+
+  position: relative;
+  top: 30px;
+}
+
+#img--conteudo h1{
+  color: #1d1d1d;
+  font-size: 44px;
+
+  position: absolute;
+  left: calc(50% - 303.39px);
+  transform: translate(50%);
+}
+
+#img--conteudo p{
+  color: #1d1d1d;
+
+  position: absolute;
+  top: 64px;
+  left: calc(50% - 430.41px);
+  transform: translate(50%);
+}
+
+#img--conteudo img{
+  width: 500px;
+  height: 500px;
+
+  position: absolute;
+}
+
+@media (max-width: 500px){
+  #img--conteudo {
+    width: 300px;
+    height: 300px;
+
+    position: relative;
+    top: 30px;
+  }
+  
+  #img--conteudo h1 {
+    color: #1d1d1d;
+    font-size: 28px;
+
+    position: absolute;
+    top: -25px;
+    left: calc(50% - 193px);
+    transform: translate(50%);
+  }
+
+  #img--conteudo p {
+    width: 25ch;
+    color: #1d1d1d;
+    font-size: 14px;
+    text-align: center;
+
+    position: absolute;
+    top: 15px;
+    left: calc(50% - 242px);
+    transform: translate(50%);
+  }
+
+  #img--conteudo img {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+  }
+}
