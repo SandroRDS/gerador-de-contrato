@@ -53,6 +53,7 @@
     }
     else
     {
-        http_response_code(403);
+        http_response_code(404);
+        header("Location: http://codigin.epizy.com/assets/errors/not-found.html");
     }
 ?>
