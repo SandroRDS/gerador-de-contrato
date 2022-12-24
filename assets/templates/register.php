@@ -150,21 +150,24 @@
     </div>
 
     <?php
-      $erro = $_GET["error"];
-      echo "<div class='register-error'>$erro</div>";
+      if(isset($_GET["error"]))
+      {
+        $erro = $_GET["error"];
+        echo "<div class='register-error'>$erro</div>";
+      }
     ?>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   
-  <script src="/gerador-de-contratos/assets/js/classRegisterInputValidation/RegisterInputValidation.js"></script>
+  <script src="/gerador-de-contratos/js/classRegisterInputValidation/RegisterInputValidation.js"></script>
   
-  <script src="/gerador-de-contratos/assets/js/classFormMask/classFormMask.js"></script>
-  <script src="/gerador-de-contratos/assets/js/validation/register--defineMasks.js"></script>
+  <script src="/gerador-de-contratos/js/classFormMask/classFormMask.js"></script>
+  <script src="/gerador-de-contratos/js/validation/register--defineMasks.js"></script>
 
-  <script src="/gerador-de-contratos/assets/js/interactivity/register--swiper.js"></script>
-  <script src="/gerador-de-contratos/assets/js/interactivity/register--changeColorSteps.js"></script>
-  <script src="/gerador-de-contratos/assets/js/interactivity/register--cepSearch.js"></script>
+  <script src="/gerador-de-contratos/js/interactivity/register--swiper.js"></script>
+  <script src="/gerador-de-contratos/js/interactivity/register--changeColorSteps.js"></script>
+  <script src="/gerador-de-contratos/js/interactivity/register--cepSearch.js"></script>
 </body>
 
 </html>
