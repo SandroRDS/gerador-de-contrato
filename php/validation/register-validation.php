@@ -1,8 +1,8 @@
 <?php
-    include "/gerador-de-contratos/php/classUsuario/Usuario.php";
-    include "/gerador-de-contratos/php/classEndereco/Endereco.php";
-    include "/gerador-de-contratos/php/classUserValidation/UserValidation.php";
-    include "/gerador-de-contratos/php/classBDConection/BDConection.php";
+    include "../classUsuario/Usuario.php";
+    include "../classEndereco/Endereco.php";
+    include "../classUserValidation/UserValidation.php";
+    include "../classBDConection/BDConection.php";
 
     function buscarDadosDoFormulario()
     {
@@ -86,7 +86,7 @@
                 
                 inserirUsuario($mysqli, $idEndereco, $nome, $sobrenome, $email, $senha, $cpf, $cnpj, $contato);
 
-                header("Location: /gerador-de-contratos/assets/templates/login.html");
+                header("Location: /gerador-de-contratos/index.html");
             }
             else
             {

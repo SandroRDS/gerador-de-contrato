@@ -1,5 +1,5 @@
 <?php
-    include "/gerador-de-contratos/php/classBDConection/BDConection.php";
+    include "../classBDConection/BDConection.php";
     
     function verificarExistenciaUsuario($mysqli, $identificador)
     {
