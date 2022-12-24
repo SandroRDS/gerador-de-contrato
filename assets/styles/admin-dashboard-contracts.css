@@ -1,0 +1,65 @@
+#content{
+  position: relative;
+}
+
+table{
+  margin: 0 auto;
+}
+
+th{
+  color: #fff;
+  
+  padding: 0 10px;
+  background-color: blueviolet;
+}
+
+tr:nth-child(odd){
+  background-color: rgb(211, 183, 236);
+}
+
+td{
+  padding: 3px 10px;
+  max-width: 150px;
+  overflow-x:auto;
+  cursor: pointer;
+}
+
+td::-webkit-scrollbar {
+  width: 0px;
+  height: 0;
+}
+
+td::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0px;
+}
+
+td::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 0px;
+}
+
+td:nth-child(7){
+  text-align: center;
+}
+
+td:nth-child(7) i.fi-rr-check{
+  color: greenyellow;
+}
+
+td:nth-child(7) i.fi-rr-ban {
+  color: red;
+}
+
+td button{
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

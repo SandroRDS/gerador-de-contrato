@@ -14,6 +14,8 @@
   <!-- Link CSS -->
   <link rel="stylesheet" href="../styles/admin-dashboard.css">
 
+  <link rel="stylesheet" href="../styles/admin-dashboard-contracts.css">
+
   <!-- Link FLATICON -->
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'><link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -32,16 +34,16 @@
       <div class="nav--logo">
         <img src="../images/Codigin - noBG.png" alt="">
       </div>
-      <div class="nav--itens selectedOn">
+      <a href="../templates/admin-dashboard.html" class="nav--itens">
         <i class="fi fi-rr-home"></i>
         <p>Home</p>
         <span class="nav--itens--detail"></span>
-      </div>
-      <a href="../templates/admin-dashboard-contracts.html" class="nav--itens">
+      </a>
+      <div class="nav--itens selectedOn">
         <i class="fi fi-rr-portrait"></i>
         <p>Usuários</p>
         <span class="nav--itens--detail"></span>
-      </a>
+      </div>
       <div class="nav--itens">
         <i class="fi fi-rr-document-signed"></i>
         <p>Contratos</p>
@@ -59,7 +61,53 @@
         </div>
       </header>
 
-      <div id="content"></div>
+      <div id="content">
+
+        <table style= "white-space: nowrap">
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+          <th>CPF</th>
+          <th>Email</th>
+          <th>Contato</th>
+          <th>Status da Conta</th>
+          <tr>
+            <td>6</td>
+            <td>Martin</td>
+            <td>Carlos Eduardo Cauãn Pinto</td>
+            <td>07825108922</td>
+            <td>martin.carlos.pinto@systrix.com.br</td>
+            <td>27999711388</td>
+            <td><i class="fi fi-rr-check"></i></td>
+            <td><button><i class="fi fi-rr-power"></i></button></td>
+            <td><button><i class="fi fi-rr-trash"></i></button></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Martin</td>
+            <td>Carlos Eduardo Cauãn Pinto</td>
+            <td>07825108922</td>
+            <td>martin.carlos.pinto@systrix.com.br</td>
+            <td>27999711388</td>
+            <td><i class="fi fi-rr-ban"></i></td>
+            <td><button><i class="fi fi-rr-power"></i></button></td>
+            <td><button><i class="fi fi-rr-trash"></i></button></td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>Martin</td>
+            <td>Carlos Eduardo Cauãn Pinto</td>
+            <td>07825108922</td>
+            <td>martin.carlos.pinto@systrix.com.br</td>
+            <td>27999711388</td>
+            <td><i class="fi fi-rr-ban"></i></td>
+            <td><button><i class="fi fi-rr-power"></i></button></td>
+            <td><button><i class="fi fi-rr-trash"></i></button></td>
+          </tr>
+        </table>
+
+      </div>
 
     </main>
 
