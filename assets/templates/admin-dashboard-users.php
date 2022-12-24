@@ -1,3 +1,12 @@
+<?php
+  include '../../php/classBDConection/BDConection.php';
+
+  $conexao = new BDConection();
+  $mysqli  = $conexao->criarConexao();
+
+  var_dump($mysqli);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -62,49 +71,20 @@
       </header>
 
       <div id="content">
-
+        
         <table style= "white-space: nowrap">
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Sobrenome</th>
-          <th>CPF</th>
-          <th>Email</th>
-          <th>Contato</th>
-          <th>Status da Conta</th>
-          <tr>
-            <td>6</td>
-            <td>Martin</td>
-            <td>Carlos Eduardo Cauãn Pinto</td>
-            <td>07825108922</td>
-            <td>martin.carlos.pinto@systrix.com.br</td>
-            <td>27999711388</td>
-            <td><i class="fi fi-rr-check"></i></td>
-            <td><button><i class="fi fi-rr-power"></i></button></td>
-            <td><button><i class="fi fi-rr-trash"></i></button></td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Martin</td>
-            <td>Carlos Eduardo Cauãn Pinto</td>
-            <td>07825108922</td>
-            <td>martin.carlos.pinto@systrix.com.br</td>
-            <td>27999711388</td>
-            <td><i class="fi fi-rr-ban"></i></td>
-            <td><button><i class="fi fi-rr-power"></i></button></td>
-            <td><button><i class="fi fi-rr-trash"></i></button></td>
-          </tr>
+          <thead>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>Contato</th>
+            <th>Status da Conta</th>
+          </thead>  
+          <tbody>
 
-          <tr>
-            <td>6</td>
-            <td>Martin</td>
-            <td>Carlos Eduardo Cauãn Pinto</td>
-            <td>07825108922</td>
-            <td>martin.carlos.pinto@systrix.com.br</td>
-            <td>27999711388</td>
-            <td><i class="fi fi-rr-ban"></i></td>
-            <td><button><i class="fi fi-rr-power"></i></button></td>
-            <td><button><i class="fi fi-rr-trash"></i></button></td>
-          </tr>
+          </tbody>
         </table>
 
       </div>
@@ -113,8 +93,8 @@
 
   </div>
 
-  <script src="../../js/dashboarADMIN/navOnOff.js"></script>
-
+  <script src="../../js/interactivity/dashboard--navOnOff.js"></script>
+  <script src="../../js/interactivity/dashboard--navHover.js"></script>
 </body>
 
 </html>
