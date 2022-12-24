@@ -42,6 +42,15 @@
 
       <button type="submit" name="entrar" value="">Entrar<span class="material-symbols-sharp">trending_flat</span></button>
     </form>
+
+      <?php
+        if(isset($_GET["error"]))
+        {
+          $erro = $_GET["error"];
+          echo "<div class='error-container'><div class='error-container__border'></div><div class='error-container__mensage'>$erro</div></div>";
+        }
+      ?>
+    </div>
   </div>
   
 </body>

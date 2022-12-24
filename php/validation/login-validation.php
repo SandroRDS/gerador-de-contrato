@@ -23,7 +23,7 @@
         }
         else
         {
-            echo "A senha informada está incorreta!";
+            header("Location: /gerador-de-contratos/index.php?error=A senha informada está incorreta!");
             return false;
         }
     }
@@ -69,7 +69,7 @@
         }
         else
         {
-            echo "Usuário não encontrado!";
+            header("Location: /gerador-de-contratos/index.php?error=Usuário não encontrado!");
         }
     }
     else
