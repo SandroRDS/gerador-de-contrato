@@ -1,5 +1,5 @@
 <?php
-    include "../classBDConection/BDConection.php";
+    include "/gerador-de-contratos/php/classBDConection/BDConection.php";
     
     function verificarExistenciaUsuario($mysqli, $identificador)
     {
@@ -59,11 +59,11 @@
 
                 if($usuario_nivel == 2)
                 {
-                    header("Location: ../administration/user-admin.php");
+                    header("Location: /gerador-de-contratos/assets/templates/admin-dashboard.html");
                 }
                 else
                 {
-                    header("Location: ../../assets/templates/client-dashboard.html");
+                    header("Location: /gerador-de-contratos/assets/templates/client-dashboard.html");
                 }
             }
         }
@@ -75,6 +75,6 @@
     else
     {
         http_response_code(404);
-        header("Location: http://codigin.epizy.com/assets/errors/not-found.html");
+        header("Location: /gerador-de-contratos/assets/errors/not-found.html");
     }
 ?>
