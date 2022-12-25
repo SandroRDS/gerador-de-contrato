@@ -4,7 +4,9 @@
   $conexao = new BDConection();
   $mysqli  = $conexao->criarConexao();
 
-  var_dump($mysqli);
+  $dados = "idUsuario, nome, sobrenome, cpf, email, contato, ativo";
+  $select = "SELECT $dados FROM Usuario WHERE nivel='1'";
+  $busca_usuarios = $mysqli->query($select);
 ?>
 
 <!DOCTYPE html>
@@ -39,9 +41,9 @@
     <nav id="nav">
 
       <div class="nav--logo">
-        <img src="../images/Codigin - noBG.png" alt="">
+        <img src="/gerador-de-contratos/assets/images/Codigin - noBG.png" alt="">
       </div>
-      <a href="../templates/admin-dashboard.html" class="nav--itens">
+      <a href="/gerador-de-contratos/assets/templates/admin-dashboard.html" class="nav--itens">
         <i class="fi fi-rr-home"></i>
         <p>Home</p>
         <span class="nav--itens--detail"></span>
@@ -71,47 +73,52 @@
       <div id="content">
 
         <table style="white-space: nowrap">
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Sobrenome</th>
-          <th>CPF</th>
-          <th>Email</th>
-          <th>Contato</th>
-          <th>Status da Conta</th>
-          <tr>
-            <td>6</td>
-            <td>Martin</td>
-            <td>Carlos Eduardo Cauãn Pinto</td>
-            <td>07825108922</td>
-            <td>martin.carlos.pinto@systrix.com.br</td>
-            <td>27999711388</td>
-            <td><i class="fi fi-rr-check"></i></td>
-            <td><button><i class="fi fi-rr-power"></i></button></td>
-            <td><button><i class="fi fi-rr-trash"></i></button></td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Martin</td>
-            <td>Carlos Eduardo Cauãn Pinto</td>
-            <td>07825108922</td>
-            <td>martin.carlos.pinto@systrix.com.br</td>
-            <td>27999711388</td>
-            <td><i class="fi fi-rr-ban"></i></td>
-            <td><button><i class="fi fi-rr-power"></i></button></td>
-            <td><button><i class="fi fi-rr-trash"></i></button></td>
-          </tr>
+          <thead>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>Contato</th>
+            <th>Status da Conta</th>
+          </thead>
+          <tbody>
+            <?php
+              while($usuario = $busca_usuarios->fetch_array(MYSQLI_ASSOC))
+              {
+                $id        = $usuario["idUsuario"];
+                $nome      = $usuario["nome"];
+                $sobrenome = $usuario["sobrenome"];
+                $cpf       = $usuario["cpf"];
+                $email     = $usuario["email"];
+                $contato   = $usuario["contato"];
+                $ativo     = $usuario["ativo"];
+                
+                if($ativo)
+                {
+                  $status = "check";
+                }
+                else
+                {
+                  $status = "ban";
+                }
 
-          <tr>
-            <td>6</td>
-            <td>Martin</td>
-            <td>Carlos Eduardo Cauãn Pinto</td>
-            <td>07825108922</td>
-            <td>martin.carlos.pinto@systrix.com.br</td>
-            <td>27999711388</td>
-            <td><i class="fi fi-rr-ban"></i></td>
-            <td><button><i class="fi fi-rr-power"></i></button></td>
-            <td><button><i class="fi fi-rr-trash"></i></button></td>
-          </tr>
+                $linha  = "<tr>";
+                $linha .= "<td>$id</td>";
+                $linha .= "<td>$nome</td>";
+                $linha .= "<td>$sobrenome</td>";
+                $linha .= "<td>$cpf</td>";
+                $linha .= "<td>$email</td>";
+                $linha .= "<td>$contato</td>";
+                $linha .= "<td><i class='fi fi-rr-$status'></i></td>";
+                $linha .= "<td><button><i class='fi fi-rr-power'></i></button></td>";
+                $linha .= "<td><button><i class='fi fi-rr-trash'></i></button></td>";
+                $linha .= "</tr>";
+                
+                echo $linha;
+              }
+            ?>
+          </tbody>
         </table>
 
       </div>
@@ -120,7 +127,7 @@
 
   </div>
 
-  <script src="../../js/interactivity/dashboard--navOnOff.js"></script>
-  <script src="../../js/interactivity/dashboard--navHover.js"></script>
+  <script src="/gerador-de-contratos/js/interactivity/dashboard--navOnOff.js"></script>
+  <script src="/gerador-de-contratos/js/interactivity/dashboard--navHover.js"></script>
 
 </body>
