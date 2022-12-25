@@ -86,7 +86,7 @@
                 
                 inserirUsuario($mysqli, $idEndereco, $nome, $sobrenome, $email, $senha, $cpf, $cnpj, $contato);
 
-                header("Location: /gerador-de-contratos/index.html");
+                header("Location: /gerador-de-contratos/index.php");
             }
             else
             {
