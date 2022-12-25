@@ -20,6 +20,7 @@
   <!-- Link CSS -->
   <link rel="stylesheet" href="/gerador-de-contratos/assets/styles/register.css">
 
+  <!-- Link FAVICON -->
   <link rel="shortcut icon" href="/gerador-de-contratos/assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>

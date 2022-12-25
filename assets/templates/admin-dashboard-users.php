@@ -20,14 +20,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="../styles/admin-dashboard.css">
-
-  <link rel="stylesheet" href="../styles/admin-dashboard-contracts.css">
-
   <!-- Link FLATICON -->
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'><link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="/gerador-de-contratos/assets/styles/admin-dashboard.css">
+  <link rel="stylesheet" href="/gerador-de-contratos/assets/styles/admin-dashboard-contracts.css">
 
   <!-- Link FAVICON -->
   <link rel="shortcut icon" href="/gerador-de-contratos/assets/images/favicon.ico" type="image/x-icon">

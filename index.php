@@ -6,9 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Codigin - Gerador de Contratos</title>
 
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="/gerador-de-contratos/assets/styles/login.css">
-
   <!-- Link Google Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
@@ -18,6 +15,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="/gerador-de-contratos/assets/styles/login.css">
+
+  <!-- Link FAVICON -->
   <link rel="shortcut icon" href="/gerador-de-contratos/assets/images/favicon.ico" type="image/x-icon">
 </head>
 
