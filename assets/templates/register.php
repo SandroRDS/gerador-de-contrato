@@ -14,8 +14,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
   <!-- Link Google Icons -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
   
   <!-- Link CSS -->
   <link rel="stylesheet" href="/gerador-de-contratos/assets/styles/register.css">
@@ -147,6 +147,11 @@
         
       </form>
 
+    </div>
+
+    <div class="container__login">
+      <p class="login__descricao">Já possui uma conta ?</p>
+      <a class="login__link" href="/gerador-de-contratos/index.php">Faça login <span class="material-symbols-outlined">arrow_forward</span></a>
     </div>
 
     <?php

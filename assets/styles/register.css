@@ -338,6 +338,31 @@ span.alert{
   display: flex;
 }
 
+.container__login
+{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.login__link
+{
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  color: blueviolet;
+  border-bottom: 1px solid blueviolet;
+  text-decoration: none;
+}
+
+.login__link:hover
+{
+  border-color: transparent;
+  color: rgb(118, 41, 190);
+}
+
+
 .error-container
 {
   display: flex;

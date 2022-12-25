@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="/gerador-de-contratos/assets/styles/login.css">
 
   <!-- Link Google Icons -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 
   <!-- Link Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,6 +42,11 @@
 
       <button type="submit" name="entrar" value="">Entrar<span class="material-symbols-sharp">trending_flat</span></button>
     </form>
+    
+    <div class="container__cadastro">
+      <p class="cadastro__descricao">Ainda não possui uma conta ?</p>
+      <a class="cadastro__link" href="/gerador-de-contratos/assets/templates/register.php">Cadastre-se <span class="material-symbols-outlined">arrow_forward</span></a>
+    </div>
 
       <?php
         if(isset($_GET["error"]))
@@ -50,7 +55,6 @@
           echo "<div class='error-container'><div class='error-container__border'></div><div class='error-container__mensage'>$erro</div></div>";
         }
       ?>
-    </div>
   </div>
   
 </body>

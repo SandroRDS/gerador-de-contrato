@@ -128,6 +128,29 @@
   align-items: center;
 }
 
+.container__cadastro
+{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cadastro__link
+{
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  color: blueviolet;
+  border-bottom: 1px solid blueviolet;
+}
+
+.cadastro__link:hover
+{
+  border-color: transparent;
+  color: rgb(118, 41, 190);
+}
+
 .error-container
 {
   display: flex;
