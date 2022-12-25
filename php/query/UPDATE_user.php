@@ -1,5 +1,5 @@
 <?php
-    include "/gerador-de-contratos/php/classBDConection/BDConection.php";
+    include "../classBDConection/BDConection.php";
 
     $id      = $_GET["id"];
     $campos  = explode(",", $_GET["campos"]);
@@ -8,14 +8,15 @@
     $conexao = new BDConection();
     $mysqli = $conexao->criarConexao();
 
-    $query = "UPDATE Usuario SET";
+    $query = "UPDATE Usuario SET ";
 
     for($i = 0; $i < count($campos); $i++)
     {
-        $query .= " ". $campos[$i] ." = '". $valores[$i] ."'";
+        $query .= ($i > 0 ? ", " : " "). $campos[$i] ." = '". $valores[$i] ."'";
     }
 
     $query .= " WHERE idUsuario = '$id'";
+    echo $query;
     $mysqli->query($query);
 
     $url = $_SERVER["HTTP_REFERER"];

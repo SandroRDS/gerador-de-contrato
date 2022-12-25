@@ -1,5 +1,5 @@
 <?php
-    include "/gerador-de-contratos/php/classBDConection/BDConection.php";
+    include "../classBDConection/BDConection.php";
 
     $id      = $_GET["id"];
 
