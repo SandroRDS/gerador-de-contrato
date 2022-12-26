@@ -4,6 +4,7 @@ const confirmChangeAlertCancel = document.getElementById('confirm--change--alert
 
 changeAccStatus.addEventListener('click', () => {
   confirmChangeAlert.style.visibility = 'visible';
+  console.log('Alow')
 });
 
 confirmChangeAlertCancel.addEventListener('click', () =>{

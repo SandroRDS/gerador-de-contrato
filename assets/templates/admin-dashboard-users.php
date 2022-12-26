@@ -111,8 +111,8 @@
                 $linha .= "<td>$email</td>";
                 $linha .= "<td>$contato</td>";
                 $linha .= "<td><i class='fi fi-rr-$status'></i></td>";
-                $linha .= "<td><button class='botao' data-query='edit' data-id='$id' data-value='$ativo'><i class='fi fi-rr-power'></i></button></td>";
-                $linha .= "<td><button class='botao' data-query='delete' data-id='$id'><i class='fi fi-rr-trash'></i></button></td>";
+                $linha .= "<td><button class='botao' id='changeAccStatus' data-query='edit' data-id='$id' data-value='$ativo'><i class='fi fi-rr-power'></i></button></td>";
+                $linha .= "<td><button class='botao'data-query='delete' data-id='$id'><i class='fi fi-rr-trash'></i></button></td>";
                 $linha .= "</tr>";
                 
                 echo $linha;
@@ -123,13 +123,23 @@
 
       </div>
 
+      <div id="confirm--change--alert">
+        <i class="fi fi-rr-exclamation"></i>
+        <h1>Tem certeza?</h1>
+        <p>Você irá modicar o estado da conta do cliente.</p>
+        <div id="change--alert--buttons">
+          <button id='confirm--change--alert--cancel'>Cancelar</button>
+          <button>Confirmar</button>
+        </div>
+      </div>
+
     </main>
 
   </div>
 
   <script src="/gerador-de-contratos/js/interactivity/dashboard--navOnOff.js"></script>
   <script src="/gerador-de-contratos/js/interactivity/dashboard--navHover.js"></script>
-  <!-- <script src="/gerador-de-contratos/js/interactivity/dashboard--confirmModal.js"></script> -->
-  <script src="/gerador-de-contratos/js/validation/admin-dashboard-users--confirmChange.js"></script>
+  <script src="/gerador-de-contratos/js/interactivity/dashboard--confirmModal.js"></script>
+  <!-- <script src="/gerador-de-contratos/js/validation/admin-dashboard-users--confirmChange.js"></script> -->
 
 </body>
