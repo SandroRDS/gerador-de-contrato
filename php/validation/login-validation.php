@@ -1,6 +1,6 @@
 <?php
     include "../classBDConection/BDConection.php";
-    
+
     function verificarExistenciaUsuario($mysqli, $identificador)
     {
         $pesquisa  = "SELECT senha, ativo, nivel FROM Usuario WHERE cpf = '$identificador' || email = '$identificador'";

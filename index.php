@@ -1,3 +1,17 @@
+<?php
+  if(isset($_COOKIE["user"]))
+  {
+      if($_COOKIE["user"]["level"] >= 2)
+      {
+          header("Location: /gerador-de-contratos/assets/templates/admin-dashboard.php");
+      }
+      else
+      {
+          header("Location: /gerador-de-contratos/assets/templates/client-dashboard.php");
+      }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
