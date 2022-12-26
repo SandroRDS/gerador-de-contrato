@@ -30,8 +30,8 @@
 
     function criarCookieLogin($identificador, $nivel, $duracao)
     {
-        setcookie("identificador", "$identificador", $duracao, "/");
-        setcookie("nivel", "$nivel", $duracao, "/");
+        setcookie("user[identify]", $identificador, $duracao, "/");
+        setcookie("user[level]", $nivel, $duracao, "/");
     }
 
     if(isset($_POST["entrar"]))
@@ -54,16 +54,16 @@
 
             if(validarUsuario($usuario_senha, $senha_submit, $usuario_ativo))
             {
-                $tempo_sessao = $remember ? time() + 60*60*24*365 : 0;
+                $tempo_sessao = $remember ? time() + 60*60*24*365*10 : 0;
                 criarCookieLogin($identificador_submit, $usuario_nivel, $tempo_sessao);
 
                 if($usuario_nivel == 2)
                 {
-                    header("Location: /gerador-de-contratos/assets/templates/admin-dashboard.html");
+                    header("Location: /gerador-de-contratos/assets/templates/admin-dashboard.php");
                 }
                 else
                 {
-                    header("Location: /gerador-de-contratos/assets/templates/client-dashboard.html");
+                    header("Location: /gerador-de-contratos/assets/templates/client-dashboard.php");
                 }
             }
         }

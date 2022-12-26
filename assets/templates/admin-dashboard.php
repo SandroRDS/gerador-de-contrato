@@ -1,3 +1,23 @@
+<?php
+  function redirecionarRequisicao()
+  {
+    http_response_code(404);
+    header("Location: /gerador-de-contratos/assets/errors/not-found.html");
+  }
+
+  if(isset($_COOKIE["user"]["level"]))
+  {
+    if($_COOKIE["user"]["level"] < 2)
+    {
+      redirecionarRequisicao(); 
+    }
+  }
+  else
+  {
+    redirecionarRequisicao();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

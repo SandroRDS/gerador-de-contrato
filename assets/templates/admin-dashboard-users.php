@@ -1,6 +1,24 @@
 <?php
   include '../../php/classBDConection/BDConection.php';
 
+  function redirecionarRequisicao()
+  {
+    http_response_code(404);
+    header("Location: /gerador-de-contratos/assets/errors/not-found.html");
+  }
+
+  if(isset($_COOKIE["user"]["level"]))
+  {
+    if($_COOKIE["user"]["level"] < 2)
+    {
+      redirecionarRequisicao(); 
+    }
+  }
+  else
+  {
+    redirecionarRequisicao();
+  }
+
   $conexao = new BDConection();
   $mysqli  = $conexao->criarConexao();
 
@@ -43,7 +61,7 @@
       <div class="nav--logo">
         <img src="/gerador-de-contratos/assets/images/Codigin - noBG.png" alt="">
       </div>
-      <a href="/gerador-de-contratos/assets/templates/admin-dashboard.html" class="nav--itens">
+      <a href="/gerador-de-contratos/assets/templates/admin-dashboard.php" class="nav--itens">
         <i class="fi fi-rr-home"></i>
         <p>Home</p>
         <span class="nav--itens--detail"></span>

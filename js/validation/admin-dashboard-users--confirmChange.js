@@ -21,7 +21,7 @@ const enviarRequisicao = (dados) => {
             body: JSON.stringify(data),
             });
 
-            location.reload(true);
+            setTimeout(() => location.reload(true), 1000);
             break;
 
         case "delete":
@@ -33,7 +33,7 @@ const enviarRequisicao = (dados) => {
             body: JSON.stringify(data),
             });
 
-            location.reload(true);
+            setTimeout(() => location.reload(true), 1000);
             break;
     }
 }
