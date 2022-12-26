@@ -2,7 +2,7 @@
   function redirecionarRequisicao()
   {
     http_response_code(404);
-    header("Location: /gerador-de-contratos/assets/errors/not-found.html");
+    header("Location: ../../error/404");
   }
 
   if(isset($_COOKIE["user"]["level"]))
@@ -35,10 +35,10 @@
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   
   <!-- Link CSS -->
-  <link rel="stylesheet" href="/gerador-de-contratos/assets/styles/admin-dashboard.css">
+  <link rel="stylesheet" href="../../assets/styles/admin-dashboard.css">
 
   <!-- Link FAVICON -->
-  <link rel="shortcut icon" href="/gerador-de-contratos/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -49,23 +49,23 @@
     <nav id="nav">
 
       <div class="nav--logo">
-        <img src="/gerador-de-contratos/assets/images/Codigin - noBG.png" alt="">
+        <img src="../../assets/images/Codigin - noBG.png" alt="">
       </div>
       <div class="nav--itens selectedOn">
         <i class="fi fi-rr-home"></i>
         <p>Home</p>
         <span class="nav--itens--detail"></span>
       </div>
-      <a href="/gerador-de-contratos/assets/templates/admin-dashboard-users.php" class="nav--itens">
+      <a href="./usuarios" class="nav--itens">
         <i class="fi fi-rr-portrait"></i>
         <p>Usuários</p>
         <span class="nav--itens--detail"></span>
       </a>
-      <div class="nav--itens">
+      <a href="./contratos" class="nav--itens">
         <i class="fi fi-rr-document-signed"></i>
         <p>Contratos</p>
         <span class="nav--itens--detail"></span>
-      </div>
+      </a>
     </nav>
 
     <main>
@@ -84,8 +84,8 @@
 
   </div>
 
-  <script src="/gerador-de-contratos/js/interactivity/dashboard--navOnOff.js"></script>
-  <script src="/gerador-de-contratos/js/interactivity/dashboard--navHover.js"></script>
+  <script src="../../js/interactivity/dashboard--navOnOff.js"></script>
+  <script src="../../js/interactivity/dashboard--navHover.js"></script>
 </body>
 
 </html>

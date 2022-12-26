@@ -18,10 +18,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
   
   <!-- Link CSS -->
-  <link rel="stylesheet" href="/gerador-de-contratos/assets/styles/register.css">
+  <link rel="stylesheet" href="../assets/styles/register.css">
 
   <!-- Link FAVICON -->
-  <link rel="shortcut icon" href="/gerador-de-contratos/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <div id="container">
@@ -38,7 +38,7 @@
         <div class="step">3</div>
       </div>
       
-      <form class="swiper-wrapper" action="/gerador-de-contratos/php/validation/register-validation.php" method="POST" autocomplete="off">
+      <form class="swiper-wrapper" action="../php/validation/register-validation.php" method="POST" autocomplete="off">
         <div id="login--step1" class="swiper-slide">
 
           <span id="name--alert" class="alert"><p>* Nome apenas com letras e mais de 3 digitos.</p></span>
@@ -152,7 +152,7 @@
 
     <div class="container__login">
       <p class="login__descricao">Já possui uma conta ?</p>
-      <a class="login__link" href="/gerador-de-contratos/index.php">Faça login <span class="material-symbols-outlined">arrow_forward</span></a>
+      <a class="login__link" href="../">Faça login <span class="material-symbols-outlined">arrow_forward</span></a>
     </div>
 
     <?php
@@ -166,14 +166,14 @@
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   
-  <script src="/gerador-de-contratos/js/classRegisterInputValidation/RegisterInputValidation.js"></script>
+  <script src="../js/classRegisterInputValidation/RegisterInputValidation.js"></script>
   
-  <script src="/gerador-de-contratos/js/classFormMask/classFormMask.js"></script>
-  <script src="/gerador-de-contratos/js/validation/register--defineMasks.js"></script>
+  <script src="../js/classFormMask/classFormMask.js"></script>
+  <script src="../js/validation/register--defineMasks.js"></script>
 
-  <script src="/gerador-de-contratos/js/interactivity/register--swiper.js"></script>
-  <script src="/gerador-de-contratos/js/interactivity/register--changeColorSteps.js"></script>
-  <script src="/gerador-de-contratos/js/interactivity/register--cepSearch.js"></script>
+  <script src="../js/interactivity/register--swiper.js"></script>
+  <script src="../js/interactivity/register--changeColorSteps.js"></script>
+  <script src="../js/interactivity/register--cepSearch.js"></script>
 </body>
 
 </html>

@@ -86,11 +86,11 @@
                 
                 inserirUsuario($mysqli, $idEndereco, $nome, $sobrenome, $email, $senha, $cpf, $cnpj, $contato);
 
-                header("Location: /gerador-de-contratos/index.php");
+                header("Location: ../../");
             }
             else
             {
-                header("Location: /gerador-de-contratos/assets/templates/register.php?error=Conta existente!");
+                header("Location: ../../register/?error=Conta existente!");
             }
         }
         else
@@ -101,6 +101,6 @@
     else
     {
         http_response_code(404);
-        header("Location: /gerador-de-contratos/assets/errors/not-found.html");
+        header("Location: ../../error/404");
     }
 ?>

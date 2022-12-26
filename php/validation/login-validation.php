@@ -59,22 +59,22 @@
 
                 if($usuario_nivel == 2)
                 {
-                    header("Location: /gerador-de-contratos/assets/templates/admin-dashboard.php");
+                    header("Location: ../../dashboard/admin");
                 }
                 else
                 {
-                    header("Location: /gerador-de-contratos/assets/templates/client-dashboard.php");
+                    header("Location: ../../dashboard");
                 }
             }
         }
         else
         {
-            header("Location: /gerador-de-contratos/index.php?error=Usuário não encontrado!");
+            header("Location: ../../?error=Usuário não encontrado!");
         }
     }
     else
     {
         http_response_code(404);
-        header("Location: /gerador-de-contratos/assets/errors/not-found.html");
+        header("Location: ../../error/404");
     }
 ?>

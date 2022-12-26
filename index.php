@@ -3,11 +3,11 @@
   {
       if($_COOKIE["user"]["level"] >= 2)
       {
-          header("Location: /gerador-de-contratos/assets/templates/admin-dashboard.php");
+          header("Location: ./dashboard/admin");
       }
       else
       {
-          header("Location: /gerador-de-contratos/assets/templates/client-dashboard.php");
+          header("Location: ./dashboard");
       }
   }
 ?>
@@ -30,17 +30,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
   <!-- Link CSS -->
-  <link rel="stylesheet" href="/gerador-de-contratos/assets/styles/login.css">
+  <link rel="stylesheet" href="./assets/styles/login.css">
 
   <!-- Link FAVICON -->
-  <link rel="shortcut icon" href="/gerador-de-contratos/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
   <div id="container">
 
-    <form method="POST" action="/gerador-de-contratos/php/validation/login-validation.php" id="login__container" autocomplete="off">
+    <form method="POST" action="./php/validation/login-validation.php" id="login__container" autocomplete="off">
       <div class="form--input--control">
         <input type="text" name="usuario-identificador" required="" id="cliente-nome" class="form--input">
         <span class="material-symbols-sharp form--icon">person</span>
@@ -60,7 +60,7 @@
     
     <div class="container__cadastro">
       <p class="cadastro__descricao">Ainda não possui uma conta ?</p>
-      <a class="cadastro__link" href="/gerador-de-contratos/assets/templates/register.php">Cadastre-se <span class="material-symbols-outlined">arrow_forward</span></a>
+      <a class="cadastro__link" href="./register">Cadastre-se <span class="material-symbols-outlined">arrow_forward</span></a>
     </div>
 
       <?php
