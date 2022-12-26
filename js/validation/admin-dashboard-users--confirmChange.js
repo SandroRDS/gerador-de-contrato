@@ -4,16 +4,36 @@ const enviarRequisicao = (dados) => {
     const botao = dados[0];
     const query = botao.dataset.query;
     const id    = botao.dataset.id;
+    const data  = { id: id };
 
     switch(query)
     {
         case "edit":
             const estado = botao.dataset.value;
             const novoEstado = estado == 1 ? 0 : 1;
-            window.location.assign(`/gerador-de-contratos/php/query/UPDATE_user.php?id=${id}&campos=ativo&valores=${novoEstado}`);
+            data.estado = novoEstado;
+
+            fetch("/gerador-de-contratos/php/query/UPDATE_user.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+            });
+
+            location.reload(true);
             break;
+
         case "delete":
-            window.location.assign(`/gerador-de-contratos/php/query/DELETE_user.php?id=${id}`);
+            fetch("/gerador-de-contratos/php/query/DELETE_user.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+            });
+
+            location.reload(true);
             break;
     }
 }

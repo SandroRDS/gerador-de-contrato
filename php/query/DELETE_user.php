@@ -1,14 +1,14 @@
 <?php
     include "../classBDConection/BDConection.php";
 
-    $id      = $_GET["id"];
+    $json  = file_get_contents('php://input');
+    $dados = json_decode($json);
+    
+    $id     = $dados->id;
 
     $conexao = new BDConection();
     $mysqli = $conexao->criarConexao();
 
     $query = "DELETE FROM Usuario WHERE idUsuario = '$id'";
     $mysqli->query($query);
-
-    $url = $_SERVER["HTTP_REFERER"];
-    header("Location: $url");
 ?>
