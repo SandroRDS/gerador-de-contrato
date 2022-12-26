@@ -64,8 +64,6 @@ td button{
 }
 
 #confirm--change--alert{
-  content: "";
-
   width: auto;
   height: auto;
 
@@ -85,6 +83,7 @@ td button{
   flex-direction: column;
 
   visibility: hidden;
+  z-index: 100;
 }
 
 #confirm--change--alert i{
@@ -132,6 +131,5 @@ td button{
 #change--alert--buttons button:nth-child(1){
   background-color: #9b9b9b;
 }
-
 
 

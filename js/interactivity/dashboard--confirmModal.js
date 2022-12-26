@@ -1,12 +1,20 @@
-const changeAccStatus = document.getElementById('changeAccStatus');
 const confirmChangeAlert = document.getElementById('confirm--change--alert');
 const confirmChangeAlertCancel = document.getElementById('confirm--change--alert--cancel');
+const confirmChangeAlertAllow  = document.getElementById('confirm--change--alert--allow');
+let funcao, dados;
 
-changeAccStatus.addEventListener('click', () => {
+const executarConfirmModal = (_funcao, ..._dados) => {
   confirmChangeAlert.style.visibility = 'visible';
-  console.log('Alow')
-});
+  funcao = _funcao;
+  dados = _dados;
+}
 
-confirmChangeAlertCancel.addEventListener('click', () =>{
-  confirmChangeAlert.style.visibility = 'hidden'
-})
+const fecharModal = () => {
+  confirmChangeAlert.style.visibility = 'hidden';
+}
+
+confirmChangeAlertCancel.onclick = () => fecharModal();
+confirmChangeAlertAllow.onclick  = () => {
+  fecharModal();
+  funcao(dados);
+}
