@@ -12,5 +12,5 @@ CREATE TABLE Usuario(
     contato VARCHAR(11) NOT NULL,
     nivel INT(1) UNSIGNED NOT NULL DEFAULT '1',
     ativo BOOLEAN NOT NULL DEFAULT '0',
-    FOREIGN KEY (idEndereco) REFERENCES Endereco(idEndereco)
+    FOREIGN KEY (idEndereco) REFERENCES Endereco(idEndereco) ON DELETE CASCADE
 );
